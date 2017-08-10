@@ -30,7 +30,10 @@ ActiveRecord::Schema.define(version: 20170810170653) do
     t.decimal "amount", null: false
     t.string "category", null: false
     t.bigint "account_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["account_id"], name: "index_transactions_on_account_id"
   end
 
+  add_foreign_key "transactions", "accounts"
 end
